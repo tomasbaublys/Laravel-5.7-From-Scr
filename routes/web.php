@@ -25,7 +25,6 @@ Route::get('/contact', 'PagesController@contact');
 	DELETE /projects/1 (destroy)
 */
 
-
 Route::resource('projects', 'ProjectsController');
 
 // Route::get('/projects', 'ProjectsController@index'); 

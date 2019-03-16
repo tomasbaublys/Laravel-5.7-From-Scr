@@ -10,7 +10,7 @@
 	{{ method_field('PATCH') }}
 	{{ csrf_field() }}
 
-	<div class="field"></div>
+	<div class="field">
 		<label class="label" for="title">Title</label>
 
 		<div class="control">
@@ -32,6 +32,17 @@
 		</div>
 	</div>	
 
+</form>
+
+<form action="/projects/{{ $project->id }}" method="POST">
+	{{ method_field('DELETE') }}
+	{{ csrf_field() }}
+
+	<div class="field">
+		<div class="control">
+			<button type="submit" class="button">Delete Project</button>
+		</div>
+	</div>	
 </form>
 
 
