@@ -4,6 +4,6 @@
 
 @section('content')
 
-	<h1>Contact form</h1>
+	<h1 class="title">Contact form</h1>
 
 @endsection
