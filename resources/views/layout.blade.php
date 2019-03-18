@@ -8,14 +8,34 @@
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
-	<ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/projects">Projects</a></li>
-    </ul>
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">    
     <div class="container">
-		@yield('content')
-	</div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/">Home</a>
+        <div class="navbar-start">
+            <a class="navbar-item" href="/about">About</a>
+        </div>
+        <div class="navbar-start">
+            <a class="navbar-item" href="/contact">Contact</a>
+        </div>        
+        <div class="navbar-start">
+            <a class="navbar-item" href="/projects">Projects</a>
+        </div>
+        </div>
+        <div class="navbar-start"></div>
+        </div>
+    </div>
+</nav>
+  <section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-4">
+		      @yield('content')
+          </div>
+        </div>   
+
+     </div>
+</section>
 </body>
 </html>

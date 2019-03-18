@@ -4,8 +4,8 @@
 
 @section('content')
 
-<h1 class="title">Create a New Project</h1>
 
+<p class="title">Create a New Project</p>
 <form action="/projects" method="POST">
 	{{ csrf_field() }}
 	<div class="field">
@@ -30,5 +30,6 @@
 		</div>
 	</div>
 </form>
+
 
 @endsection
