@@ -8,6 +8,11 @@ class Task extends Model
 {
 	protected $guarded = [];
 
+	public function complete($completed = true)
+	{
+		return $this->update(compact('completed'));
+	}
+
     public function project()
     {
     	return $this->belongsTo(Project::class);
