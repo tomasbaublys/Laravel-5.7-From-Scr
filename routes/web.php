@@ -1,15 +1,15 @@
 <?php
 
-/*
-use App\Services\Twitter;
 
-Route::get('/', function (Twitter $twitter) {
+// use App\Services\Twitter;
 
-	dd($twitter);
+// Route::get('/', function (Twitter $twitter) {
 
-	return view('welcome');
-});
-*/
+// 	dd($twitter);
+
+// 	return view('welcome');
+// });
+
 
 /*
 use App\Repositories\UserRepository;
