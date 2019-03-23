@@ -28,6 +28,8 @@ class ProjectsController extends Controller
 
     public function show(Project $project)
     {
+        $this->authorize('update', $project);
+
     	return view('projects.show', compact('project'));
     }
 
@@ -67,6 +69,8 @@ class ProjectsController extends Controller
 
     public function update(Project $project)
     {
+        $this->authorize('update', $project);
+
         /* 1.) cleanest code, best of these 3 options */
         $project->update(request(['title', 'description']));
 
@@ -81,6 +85,8 @@ class ProjectsController extends Controller
 
     public function destroy(Project $project)
     {
+        $this->authorize('update', $project);
+
     	$project->delete();
     	return redirect('/projects');
     }
