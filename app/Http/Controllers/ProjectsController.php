@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Project;
 use App\Task;
+use App\Mail\ProjectCreated;
 
 use Illuminate\Http\Request;
 
@@ -43,7 +44,11 @@ class ProjectsController extends Controller
 
         $attributes['owner_id'] = auth()->id();
 
-        Project::create($attributes);
+        $project = Project::create($attributes);
+
+        \Mail::to('tomas.forumfilms@gmail.com')->send(
+            new ProjectCreated($project)
+        );
 
         /* 2.) Shorter variant 
         Project::create([
