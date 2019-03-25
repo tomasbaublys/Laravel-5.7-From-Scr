@@ -34,6 +34,8 @@
 
 </form>
 
+@include('errors')
+
 <form action="/projects/{{ $project->id }}" method="POST">
 	{{ method_field('DELETE') }}
 	{{ csrf_field() }}
