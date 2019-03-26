@@ -2,8 +2,7 @@
 
 namespace App;
 
-use App\Mail\ProjectCreated;
-use Illuminate\Support\Facades\Mail;
+use App\Events\ProjectCreated;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -11,21 +10,12 @@ class Project extends Model
 {
     protected $guarded = [];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        static::created(function ($project) {
-            Mail::to($project->owner->email)->send(
-                new ProjectCreated($project)
-            );
-        });
-
-    }
+    protected $dispatchesEvents = [
+        'created' => ProjectCreated::class
+    ];
 
     public function tasks()
     {
-
     	return $this->hasMany(Task::class);
     }
 
